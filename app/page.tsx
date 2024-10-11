@@ -20,37 +20,37 @@ export default function Home() {
       <Navbar />
 
       {/* Home Section */}
-      <section id="home" className="relative pt-20">
+      <section id="home" className="relative pt-20 px-4 sm:px-8 md:px-16 lg:px-20">
         <div className="relative">
-          <h1 className="mt-40 ml-10 font-bold text-[70px] w-[50%]">
+          <h1 className="mt-20 md:mt-40 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
             Smooth and Grow Your Business.
           </h1>
-          <p className="mt-2 ml-32 w-[40%] text-[12px] text-justify">
+          <p className="mt-2 text-xs sm:text-sm md:text-base lg:text-lg text-justify">
             Welcome to Digital Lab, where every member is as creative as Tom and Jerry. Fling your worries about social presence and digital marketing aside, because our passionate and creative team of professionals has already helped many people. Now, it's your turn to experience our expertise!
           </p>
         </div>
         <div className="flex text-center">
-          <span className="ml-40 mt-4 text-red-800">________________________</span>
-          <span className="mt-[22px] ml-10 font-bold">Discover Now</span>
+          <span className="mt-4 text-red-800 flex-grow border-b border-red-800 mx-4"></span>
+          <span className="mt-2 font-bold">Discover Now</span>
         </div>
-        <div className="m-4 absolute bottom-[300px] left-[740px]">
-          <h1 className="mt-10 text-xl font-bold ml-10">Our Professional Expertise in </h1>
+        <div className="m-4 absolute bottom-[300px] left-1/2 transform -translate-x-1/2 text-center">
+          <h1 className="mt-10 text-xl font-bold">Our Professional Expertise in</h1>
           {isMounted && <TypedComponent />} {/* Only render on the client */}
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20">
+      <section id="services" className="py-20 px-4 sm:px-8 md:px-16 lg:px-20">
         <Services />
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-20">
+      <section id="about" className="py-20 px-4 sm:px-8 md:px-16 lg:px-20">
         <About />
       </section>
 
       {/* Contact Us Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 px-4 sm:px-8 md:px-16 lg:px-20">
         <Contactus />
       </section>
 

@@ -51,7 +51,7 @@ const Contactus: React.FC = () => {
 
   return (
     <>
-      <title>Contact US</title>
+      <title>Contact Us</title>
       <div className="container mx-auto p-4 flex justify-center items-center min-h-screen">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full md:w-2/3 lg:w-1/2">
           <h1 className="text-3xl font-bold text-center mb-8">Fill The Form</h1>
