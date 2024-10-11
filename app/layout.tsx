@@ -29,6 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
       </body>
     </html>
   );

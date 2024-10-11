@@ -1,101 +1,61 @@
-import Image from "next/image";
+// pages/index.tsx
+"use client"
+import Navbar from "./components/Navbar";
+import TypedComponent from "./components/Typed";
+import Services from "./components/Services";
+import Footer from "./components/Footer";
+import About from "./components/About";
+import { useEffect, useState } from "react";
+import Contactus from "./components/Contact";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isMounted, setIsMounted] = useState(false); // Track if the component has mounted
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    setIsMounted(true); // Set mounted state to true after component mounts
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+
+      {/* Home Section */}
+      <section id="home" className="relative pt-20">
+        <div className="relative">
+          <h1 className="mt-40 ml-10 font-bold text-[70px] w-[50%]">
+            Smooth and Grow Your Business.
+          </h1>
+          <p className="mt-2 ml-32 w-[40%] text-[12px] text-justify">
+            Welcome to Digital Lab, where every member is as creative as Tom and Jerry. Fling your worries about social presence and digital marketing aside, because our passionate and creative team of professionals has already helped many people. Now, it's your turn to experience our expertise!
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex text-center">
+          <span className="ml-40 mt-4 text-red-800">________________________</span>
+          <span className="mt-[22px] ml-10 font-bold">Discover Now</span>
+        </div>
+        <div className="m-4 absolute bottom-[300px] left-[740px]">
+          <h1 className="mt-10 text-xl font-bold ml-10">Our Professional Expertise in </h1>
+          {isMounted && <TypedComponent />} {/* Only render on the client */}
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20">
+        <Services />
+      </section>
+
+      {/* About Us Section */}
+      <section id="about" className="py-20">
+        <About />
+      </section>
+
+      {/* Contact Us Section */}
+      <section id="contact" className="py-20">
+        <Contactus />
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </>
   );
 }
